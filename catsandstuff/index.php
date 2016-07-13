@@ -3,7 +3,7 @@
  * example file for how to handle the authetication links
  */
 if (isset($_GET['otp'])) {
-    $db = new PDO('mysql:host=localhost;dbname=websitesql26;charset=utf8', 'websitesql26', 'kfxd6rwgjiohj4');
+    $db = new PDO('mysql:host=localhost;dbname=tlpa;charset=utf8', 'user', 'password');
     $state = $db->prepare("SELECT user, expire FROM auth WHERE otp = :otp");
     $state->execute(array(':otp' => $_GET['otp']));
     $res = $state->fetch(PDO::FETCH_ASSOC);
